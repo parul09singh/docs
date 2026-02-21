@@ -7,8 +7,10 @@ case "$action" in
         git merge origin/main;
         # git push;
         ;;
-    "install_nvm")
-        curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.4/install.sh | bash
+    "setup")
+        curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.4/install.sh | bash;
+        nvm use;
+        npm init docusaurus@latest docs classic;
         ;;
     *)
         echo "Not a valid command - $action"
